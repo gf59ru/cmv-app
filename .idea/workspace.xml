@@ -203,7 +203,13 @@
       <option name="project" value="LOCAL" />
       <updated>1416470381222</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавил файлы проекта webstorm">
+      <created>1416472641715</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1416472641715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
