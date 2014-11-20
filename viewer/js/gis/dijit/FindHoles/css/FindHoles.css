@@ -1,0 +1,97 @@
+.gis_FindHolesDijit {
+}
+
+.gis_FindHolesDijit .outerList>li {
+    margin-bottom: 1em;
+}
+.gis_FindHolesDijit .list-unstyled {
+    padding-left: 0px;
+    list-style-type: none;
+    list-style-position: outside;
+    list-style-image: none;
+}
+
+.gis_FindHolesDijit .list-inline {
+    padding-left: 0px;
+    margin-left: -5px;
+    list-style-type: none;
+    list-style-position: outside;
+    list-style-image: none;
+}
+
+.gis_FindHolesDijit .list-inline > li {
+    display: inline-block;
+}
+
+.gis_FindHolesDijit .drawButton {
+    width: 50px;
+}
+
+.gis_FindHolesDijit .stopIcon {
+    color: red;
+}
+
+.gis_FindHolesDijit .drawButton .dijitButtonText {
+    /*display: none;*/
+}
+.gis_FindHolesDijit .polyIcon {
+    background-image: url(../images/toolbar_icons.png);
+    background-position: -68px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .pointIcon {
+    background-image: url(../images/toolbar_icons.png);
+    background-position: 0px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .circleDrawIcon {
+    background-image: url(../images/toolbar_icons.png);
+    background-position: -390px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .lineIcon {
+    background-image: url(../images/toolbar_icons.png);
+    background-position: -34px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .freehandDrawIcon {
+    background-image: url(../images/toolbar_icons.png);
+    background-position: -102px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .freehandPolygonDrawIcon {
+    background-image: url(../images/toolbar_icons_2.png);
+    background-position: -473px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .clearIcon {
+    background-image: url(../images/clear.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_FindHolesDijit .formContainer {
+    /*border: 1px solid #bbb;*/
+    margin-bottom: -1px;
+    width: 100%;
+}
+
+.gis_FindHolesDijit .buttonActionBar {
+    /*background-color: #F2F2F2;
+    border: 1px solid #CDCDCD;*/
+    padding: 3px 0px 2px 0px;
+    text-align: right;
+    width: 100%;
+}

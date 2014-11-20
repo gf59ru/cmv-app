@@ -11,6 +11,7 @@ define([
 	'gis/dijit/FloatingTitlePane',
 	'dojo/_base/lang',
 	'dojo/text!./templates/mapOverlay.html',
+	'dojo/text!./templates/bottomContent.html',
 	'gis/dijit/FloatingWidgetDialog',
 	'put-selector',
 	'dojo/aspect',
@@ -19,7 +20,7 @@ define([
 	'esri/dijit/PopupMobile',
 	'dijit/Menu',
 	'esri/IdentityManager'
-], function (Map, dom, domStyle, domGeom, domClass, on, array, BorderContainer, ContentPane, FloatingTitlePane, lang, mapOverlay, FloatingWidgetDialog, put, aspect, has, topic, PopupMobile, Menu) {
+], function (Map, dom, domStyle, domGeom, domClass, on, array, BorderContainer, ContentPane, FloatingTitlePane, lang, mapOverlay, bottomContent, FloatingWidgetDialog, put, aspect, has, topic, PopupMobile, Menu) {
 
 	return {
 		legendLayerInfos: [],
@@ -38,6 +39,13 @@ define([
 				placeAt: 'outer',
 				region: 'center',
 				content: mapOverlay
+			},
+			bottom: {
+				id: 'resultsBottom',
+				placeAt: 'outer',
+				collapsible: true,
+				region: 'bottom',
+				content: bottomContent
 			}
 		},
 		collapseButtons: {},
@@ -158,8 +166,10 @@ define([
 			for (key in panes) {
 				if (panes.hasOwnProperty(key)) {
 					if (panes[key].collapsible) {
-						this.collapseButtons[key] = put(this.panes[this.collapseButtonsPane].domNode, 'div.sidebarCollapseButton.sidebar' + key + 'CollapseButton.sidebarCollapseButton' + ((key === 'bottom' || key === 'top') ? 'Vert' : 'Horz') + ' div.dijitIcon.button.close').parentNode;
-						on(this.collapseButtons[key], 'click', lang.hitch(this, 'togglePane', key));
+						var button = put(this.panes[this.collapseButtonsPane].domNode, 'div.sidebarCollapseButton.sidebar' + key + 'CollapseButton.sidebarCollapseButton' + ((key === 'bottom' || key === 'top') ? 'Vert' : 'Horz') + ' div.dijitIcon.button.close').parentNode;
+						button.id = 'collapseButton_' + key;
+						on(button, 'click', lang.hitch(this, 'togglePane', key));
+						this.collapseButtons[key] = button;
 						this.positionSideBarToggle(key);
 						if (this.collapseButtonsPane === 'outer') {
 							var splitter = this.panes[key]._splitterWidget;

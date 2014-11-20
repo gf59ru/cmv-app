@@ -1,0 +1,27 @@
+﻿<div id="bottomResultsContent">
+	<span id="findResultsCount"></span>
+	<div style="padding:5px;">
+		<label for="newDistanceTextBox">Дистанция буфера для поиска скважин, м</label>
+		<input name="newDistanceTextBox" type="text"
+			id="newDistanceTextBox"
+			data-dojo-type="dijit/form/NumberTextBox"
+			data-dojo-props="trim:true, propercase:true"/>
+		<!--input name="newDistanceTextBox" type="text"
+			id="newDistanceTextBox"
+			data-role="maskedtextbox"
+			data-mask="0000000000"
+			data-bind="value:distance"
+			data-dojo-props="trim:true, propercase:true"/-->
+		<span id="newSearchButtonDiv">
+			<button data-dojo-type="dijit/form/Button" data-dojo-props="showLabel:true"
+				input-type="submit"
+				id="newSearchButton" name="newSearchButton">
+				Найти заново
+			</button>
+		</span>
+		<!--button id="newSearchButton"
+			data-role="button">Найти заново</button-->
+	</div>
+	<br/>
+	<div id="findResultsGrid"></div>
+</div>

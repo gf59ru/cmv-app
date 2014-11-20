@@ -25,8 +25,8 @@ define([
 		// map options, passed to map constructor. see: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
 		mapOptions: {
 			basemap: 'streets',
-			center: [-96.59179687497497, 39.09596293629694],
-			zoom: 5,
+			center: [56.782043, 59.626306],
+			zoom: 13,
 			sliderStyle: 'small'
 		},
 		// panes: {
@@ -62,55 +62,17 @@ define([
 		// 3 'mode' options: MODE_SNAPSHOT = 0, MODE_ONDEMAND = 1, MODE_SELECTION = 2
 		operationalLayers: [{
 			type: 'feature',
-			url: 'http://services1.arcgis.com/g2TonOxuRkIqSOFx/arcgis/rest/services/MeetUpHomeTowns/FeatureServer/0',
-			title: 'STLJS Meetup Home Towns',
+			url: 'http://qwerty-3:6080/arcgis/rest/services/Test/Wells_MS/MapServer/0',
+			title: 'Скважины',
 			options: {
-				id: 'meetupHometowns',
-				opacity: 1.0,
+				id: 'holes',
+				opacity: .5,
 				visible: true,
 				outFields: ['*'],
 				mode: 0
 			},
 			editorLayerInfos: {
 				disableGeometryUpdate: false
-			}
-		}, {
-			type: 'feature',
-			url: 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/SanFrancisco/311Incidents/FeatureServer/0',
-			title: 'San Francisco 311 Incidents',
-			options: {
-				id: 'sf311Incidents',
-				opacity: 1.0,
-				visible: true,
-				outFields: ['req_type', 'req_date', 'req_time', 'address', 'district'],
-				mode: 0
-			}
-		}, {
-			type: 'dynamic',
-			url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
-			title: 'Louisville Public Safety',
-			options: {
-				id: 'louisvillePubSafety',
-				opacity: 1.0,
-				visible: true,
-				imageParameters: imageParameters
-			},
-			identifyLayerInfos: {
-				layerIds: [2, 4, 5, 8, 12, 21]
-			}
-		}, {
-			type: 'dynamic',
-			url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/MapServer',
-			title: 'Damage Assessment',
-			options: {
-				id: 'DamageAssessment',
-				opacity: 1.0,
-				visible: true,
-				imageParameters: imageParameters
-			},
-			layerControlLayerInfos: {
-				swipe: true,
-				metadataUrl: true
 			}
 		}],
 		// set include:true to load. For titlePane type set position the the desired order in the sidebar
@@ -397,6 +359,20 @@ define([
 					map: true,
 					mapClickMode: true,
 					mapRightClickMenu: true
+				}
+			},
+			findHoles: {
+				include: true,
+				id: 'findholes',
+				type: 'titlePane',
+				canFloat: false,
+				path: 'gis/dijit/FindHoles',
+				title: 'Поиск скважин',
+				open: true,
+				position: 1,
+				options: {
+					map: true,
+					mapClickMode: true
 				}
 			},
 			help: {

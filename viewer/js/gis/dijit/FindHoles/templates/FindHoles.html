@@ -1,0 +1,37 @@
+<div class="gis_FindHolesDijit">
+    <div class="formContainer">
+        <div style="padding:5px;">
+            <label for="distanceTextBox">Дистанция буфера для поиска скважин, м</label>
+            <input name="distanceTextBox" type="text"
+                   id="distanceTextBox"
+                   data-dojo-type="dijit/form/NumberTextBox"
+                   data-dojo-props="trim:true, propercase:true"/>
+            <div>
+                <div style="padding:5px;">
+                    <table>
+                        <tr>
+                            <td>
+                                <button data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'polyIcon',showLabel:true"
+                                        data-dojo-attach-event="onClick:drawPolygon">
+                                    Задать многоугольник по углам
+                                </button>
+                                <button data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'freehandDrawIcon',showLabel:true"
+                                        data-dojo-attach-event="onClick:drawFreehandPolygon">
+                                    Нарисовать многоугольник от руки
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="buttonActionBar">
+                <button data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'clearIcon',showLabel:true"
+                        data-dojo-attach-event="onClick:clearGraphics">
+                    Очистить
+                </button>
+            </div>
+            <div data-dojo-attach-point="findResultsNode" class="resultsContainer"></div>
+            <div data-dojo-attach-point="findResultsGrid" class="resultsGrid"></div>
+        </div>
+    </div>
+</div>
